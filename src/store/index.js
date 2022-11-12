@@ -5,8 +5,11 @@ export default createStore({
     day: 0,
     funds: 10000,
   },
-  getters: {},
-  mutations: {},
+  mutations: {
+    incrementDay(state) {
+      state.day++
+    },
+  },
   actions: {},
   modules: {},
 })

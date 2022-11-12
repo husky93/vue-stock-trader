@@ -1,22 +1,33 @@
 <template>
   <div class="header-info">
-    <InfoGroup label="Day" :value="$store.state.day" />
+    <div class="day-ui">
+      <InfoGroup label="Day" :value="$store.state.day" />
+      <Button @btn-click="handleEndDayClick" text="End Day" />
+    </div>
     <InfoGroup label="Funds" :value="`${$store.state.funds} $`" />
   </div>
 </template>
 
 <script>
 import InfoGroup from './InfoGroup.vue'
+import Button from './Button.vue'
 export default {
   name: 'HeaderInfo',
   components: {
     InfoGroup,
+    Button,
+  },
+  methods: {
+    handleEndDayClick() {
+      this.$store.commit('incrementDay')
+    },
   },
 }
 </script>
 
 <style scoped>
-.header-info {
+.header-info,
+.day-ui {
   display: flex;
   gap: 24px;
 }

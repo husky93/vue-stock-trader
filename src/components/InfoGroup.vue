@@ -7,10 +7,7 @@
 <script>
 export default {
   name: 'InfoGroup',
-  props: {
-    label: String,
-    value: String,
-  },
+  props: ['label', 'value'],
 }
 </script>
 

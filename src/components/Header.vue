@@ -5,7 +5,9 @@
         <Logo />
         <NavBar />
       </div>
-      <div class="container ui"></div>
+      <div class="container ui">
+        <HeaderInfo />
+      </div>
     </div>
   </header>
 </template>
@@ -13,27 +15,26 @@
 <script>
 import Logo from './Logo.vue'
 import NavBar from './NavBar.vue'
+import HeaderInfo from './HeaderInfo.vue'
 
 export default {
   name: 'HeaderElement',
   components: {
     Logo,
     NavBar,
+    HeaderInfo,
   },
 }
 </script>
 
 <style scoped>
-header {
+header .m-auto {
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
 .container {
   display: flex;
   align-items: center;
-}
-.link {
-  text-decoration: none;
+  gap: 24px;
 }
 </style>

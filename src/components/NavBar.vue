@@ -11,4 +11,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.link {
+  text-decoration: none;
+}
+</style>
