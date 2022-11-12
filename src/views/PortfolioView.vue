@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio">
-    <h1>This is an about page</h1>
-  </div>
+  <main class="portfolio m-auto">
+    <h3>Portfolio</h3>
+  </main>
 </template>

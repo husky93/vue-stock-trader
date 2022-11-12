@@ -1,5 +1,5 @@
 <template>
-  <h2>Stocks</h2>
+  <main class="stocks m-auto"><h3>Stocks</h3></main>
 </template>
 
 <style></style>
