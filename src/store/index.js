@@ -1,7 +1,10 @@
 import { createStore } from 'vuex'
 
 export default createStore({
-  state: {},
+  state: {
+    day: 0,
+    funds: 10000,
+  },
   getters: {},
   mutations: {},
   actions: {},
