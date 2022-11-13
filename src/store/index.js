@@ -35,5 +35,11 @@ export default createStore({
       commit('updateStocksPrice', newStocksArray)
     },
   },
+  getters: {
+    getMaxAmount: (state) => (id) => {
+      const stock = state.stocksAvailable.find((stock) => stock.id === id)
+      return Math.floor(state.funds / stock.price)
+    },
+  },
   modules: {},
 })
