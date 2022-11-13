@@ -25,6 +25,20 @@ export default createStore({
     updateStocksPrice(state, payload) {
       state.stocksAvailable = payload
     },
+    updateFunds(state, payload) {
+      state.funds = payload
+    },
+    addStock(state, payload) {
+      state.stocksOwned = [
+        ...state.stocksOwned,
+        { id: payload.id, amount: payload.amount },
+      ]
+    },
+    removeStock(state, payload) {
+      state.stocksOwned = state.stocksOwned.filter(
+        (item) => item.id !== payload.id
+      )
+    },
   },
   actions: {
     endDay({ commit, state }) {
