@@ -14,7 +14,7 @@
       />
       <Button @btn-click="increaseCount" text="+" />
       <Button @btn-click="setCount(maxAmount)" text="Max" />
-      <Button text="Buy" />
+      <Button @btn-click="handleBuyStock" text="Buy" />
     </div>
   </div>
 </template>
@@ -49,6 +49,11 @@ export default {
       if (this.count > this.maxAmount) {
         this.count = this.maxAmount
       }
+    },
+    handleBuyStock() {
+      this.$store.dispatch('buyStock', { id: this.id, amount: this.count })
+      this.maxAmount = this.$store.getters.getMaxAmount(this.id)
+      this.count = 0
     },
   },
 }

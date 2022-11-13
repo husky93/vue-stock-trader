@@ -48,6 +48,12 @@ export default createStore({
       commit('incrementDay')
       commit('updateStocksPrice', newStocksArray)
     },
+    buyStock({ commit, state }, payload) {
+      const stock = state.stocksAvailable.find((item) => item.id === payload.id)
+      const updatedFunds = state.funds - stock.price * payload.amount
+      commit('addStock', payload)
+      commit('updateFunds', updatedFunds)
+    },
   },
   getters: {
     getMaxAmount: (state) => (id) => {
