@@ -24,14 +24,13 @@ import Button from './Button.vue'
 
 export default {
   name: 'StockElement',
-  props: ['name', 'price', 'id'],
+  props: ['name', 'price', 'id', 'maxAmount'],
   components: {
     Button,
   },
   data() {
     return {
       count: 0,
-      maxAmount: this.$store.getters.getMaxAmount(this.id),
     }
   },
   methods: {
@@ -52,7 +51,7 @@ export default {
     },
     handleBuyStock() {
       this.$store.dispatch('buyStock', { id: this.id, amount: this.count })
-      this.maxAmount = this.$store.getters.getMaxAmount(this.id)
+      this.$store.dispatch('changeMaxAmount')
       this.count = 0
     },
   },

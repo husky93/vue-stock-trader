@@ -6,16 +6,66 @@ export default createStore({
     funds: 10000,
     stocksOwned: [],
     stocksAvailable: [
-      { id: 0, name: 'Microsoft', price: 75 },
-      { id: 1, name: 'Apple', price: 32 },
-      { id: 2, name: 'Alphabet', price: 41 },
-      { id: 3, name: 'Tesla', price: 12 },
-      { id: 4, name: 'Lockheed Martin', price: 76 },
-      { id: 5, name: 'Boeing', price: 99 },
-      { id: 6, name: 'Netflix', price: 43 },
-      { id: 7, name: 'Nvidia', price: 27 },
-      { id: 8, name: 'S&P500', price: 84 },
-      { id: 9, name: 'Blizzard', price: 91 },
+      {
+        id: 0,
+        name: 'Microsoft',
+        price: 75,
+        maxAmount: 0,
+      },
+      {
+        id: 1,
+        name: 'Apple',
+        price: 32,
+        maxAmount: 0,
+      },
+      {
+        id: 2,
+        name: 'Alphabet',
+        price: 41,
+        maxAmount: 0,
+      },
+      {
+        id: 3,
+        name: 'Tesla',
+        price: 12,
+        maxAmount: 0,
+      },
+      {
+        id: 4,
+        name: 'Lockheed Martin',
+        price: 76,
+        maxAmount: 0,
+      },
+      {
+        id: 5,
+        name: 'Boeing',
+        price: 99,
+        maxAmount: 0,
+      },
+      {
+        id: 6,
+        name: 'Netflix',
+        price: 43,
+        maxAmount: 0,
+      },
+      {
+        id: 7,
+        name: 'Nvidia',
+        price: 27,
+        maxAmount: 0,
+      },
+      {
+        id: 8,
+        name: 'S&P500',
+        price: 84,
+        maxAmount: 0,
+      },
+      {
+        id: 9,
+        name: 'Blizzard',
+        price: 91,
+        maxAmount: 0,
+      },
     ],
   },
   mutations: {
@@ -39,6 +89,12 @@ export default createStore({
         (item) => item.id !== payload.id
       )
     },
+    setMaxAmount(state, payload) {
+      const objRef = state.stocksAvailable.find(
+        (item) => item.id === payload.id
+      )
+      objRef.maxAmount = payload.maxAmount
+    },
   },
   actions: {
     endDay({ commit, state }) {
@@ -53,6 +109,14 @@ export default createStore({
       const updatedFunds = state.funds - stock.price * payload.amount
       commit('addStock', payload)
       commit('updateFunds', updatedFunds)
+    },
+    changeMaxAmount({ commit, state }) {
+      state.stocksAvailable.forEach((item) => {
+        commit('setMaxAmount', {
+          id: item.id,
+          maxAmount: Math.floor(state.funds / item.price),
+        })
+      })
     },
   },
   getters: {

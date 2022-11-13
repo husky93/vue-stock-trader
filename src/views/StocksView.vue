@@ -7,6 +7,7 @@
       :name="stock.name"
       :price="stock.price"
       :id="stock.id"
+      :maxAmount="stock.maxAmount"
     />
   </main>
 </template>
@@ -17,6 +18,9 @@ export default {
   name: 'StocksView',
   components: {
     Stock,
+  },
+  created() {
+    this.$store.dispatch('changeMaxAmount')
   },
 }
 </script>
