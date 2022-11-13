@@ -6,6 +6,7 @@
       :key="stock.id"
       :name="stock.name"
       :price="stock.price"
+      :id="stock.id"
     />
   </main>
 </template>
