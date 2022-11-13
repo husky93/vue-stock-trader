@@ -24,7 +24,7 @@ import Button from './Button.vue'
 
 export default {
   name: 'StockElement',
-  props: ['name', 'price', 'id', 'maxAmount'],
+  props: ['name', 'price', 'id', 'maxAmount', 'reset'],
   components: {
     Button,
   },
@@ -32,6 +32,11 @@ export default {
     return {
       count: 0,
     }
+  },
+  watch: {
+    reset: function (oldVal, newVal) {
+      if (newVal) this.count = 0
+    },
   },
   methods: {
     increaseCount() {
@@ -52,6 +57,7 @@ export default {
     handleBuyStock() {
       this.$store.dispatch('buyStock', { id: this.id, amount: this.count })
       this.$store.dispatch('changeMaxAmount')
+      this.$emit('stock-bought')
       this.count = 0
     },
   },
