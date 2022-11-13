@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     handleEndDayClick() {
-      this.$store.commit('incrementDay')
+      this.$store.dispatch('endDay')
     },
   },
 }
