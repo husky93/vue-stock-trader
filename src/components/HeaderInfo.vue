@@ -20,6 +20,7 @@ export default {
   methods: {
     handleEndDayClick() {
       this.$store.dispatch('endDay')
+      this.$store.dispatch('changeMaxAmount')
     },
   },
 }
