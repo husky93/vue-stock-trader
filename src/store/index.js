@@ -110,6 +110,12 @@ export default createStore({
       commit('addStock', payload)
       commit('updateFunds', updatedFunds)
     },
+    sellStock({ commit, state }, payload) {
+      const stock = state.stocksAvailable.find((item) => item.id === payload.id)
+      const updatedFunds = state.funds + stock.price * payload.amount
+      commit('removeStock', payload)
+      commit('updateFunds', updatedFunds)
+    },
     changeMaxAmount({ commit, state }) {
       state.stocksAvailable.forEach((item) => {
         commit('setMaxAmount', {
