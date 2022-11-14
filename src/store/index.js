@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import { v4 as uuidv4 } from 'uuid'
 
 export default createStore({
   state: {
@@ -81,12 +82,17 @@ export default createStore({
     addStock(state, payload) {
       state.stocksOwned = [
         ...state.stocksOwned,
-        { id: payload.id, amount: payload.amount, buyPrice: payload.buyPrice },
+        {
+          id: payload.id,
+          transactionId: uuidv4(),
+          amount: payload.amount,
+          buyPrice: payload.buyPrice,
+        },
       ]
     },
     removeStock(state, payload) {
       state.stocksOwned = state.stocksOwned.filter(
-        (item) => item.id !== payload.id
+        (item) => item.transactionId !== payload.transactionId
       )
     },
     setMaxAmount(state, payload) {

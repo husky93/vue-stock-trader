@@ -16,13 +16,24 @@
         (stockObject.price - stock.buyPrice) * stock.amount + '$'
       }}</span>
     </div>
+    <div class="portfolio-item-ui">
+      <Button
+        @btn-click="$store.dispatch('sellStock', stock)"
+        text="Sell All"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import Button from './Button.vue'
+
 export default {
   name: 'PortfolioItem',
   props: ['stock'],
+  components: {
+    Button,
+  },
   computed: {
     stockObject() {
       return this.$store.state.stocksAvailable[this.stock.id]
