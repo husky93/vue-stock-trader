@@ -111,10 +111,14 @@ export default createStore({
       commit('updateStocksPrice', newStocksArray)
     },
     buyStock({ commit, state }, payload) {
-      const stock = state.stocksAvailable.find((item) => item.id === payload.id)
-      const updatedFunds = state.funds - stock.price * payload.amount
-      commit('addStock', payload)
-      commit('updateFunds', updatedFunds)
+      if (payload.amount > 0) {
+        const stock = state.stocksAvailable.find(
+          (item) => item.id === payload.id
+        )
+        const updatedFunds = state.funds - stock.price * payload.amount
+        commit('addStock', payload)
+        commit('updateFunds', updatedFunds)
+      }
     },
     sellStock({ commit, state }, payload) {
       const stock = state.stocksAvailable.find((item) => item.id === payload.id)
