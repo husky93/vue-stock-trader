@@ -1,6 +1,12 @@
 <template>
   <div class="goal m-auto">
-    <h2>Goal: $1,000,000</h2>
+    <h2>
+      {{
+        $store.state.funds < 1000000
+          ? 'Goal: $1,000,000'
+          : 'Congratulations you have reached million dollars!'
+      }}
+    </h2>
     <progress max="1000000" :value="$store.state.funds"></progress>
   </div>
 </template>
