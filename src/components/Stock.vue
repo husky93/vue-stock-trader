@@ -1,20 +1,22 @@
 <template>
   <div class="card" @mousemove="handleMouseMove">
-    <h4>{{ name }}</h4>
-    <div>
-      Price: <span>{{ price + '$' }}</span>
-    </div>
-    <div class="stock-ui">
-      <Button @btn-click="decreaseCount" text="-" />
-      <input
-        type="number"
-        @input="handleMaxInput"
-        v-model="count"
-        :max="maxAmount"
-      />
-      <Button @btn-click="increaseCount" text="+" />
-      <Button @btn-click="setCount(maxAmount)" text="Max" />
-      <Button @btn-click="handleBuyStock" text="Buy" />
+    <div class="card-content">
+      <h4>{{ name }}</h4>
+      <div>
+        Price: <span>{{ price + '$' }}</span>
+      </div>
+      <div class="stock-ui">
+        <Button @btn-click="decreaseCount" text="-" />
+        <input
+          type="number"
+          @input="handleMaxInput"
+          v-model="count"
+          :max="maxAmount"
+        />
+        <Button @btn-click="increaseCount" text="+" />
+        <Button @btn-click="setCount(maxAmount)" text="Max" />
+        <Button @btn-click="handleBuyStock" text="Buy" />
+      </div>
     </div>
   </div>
 </template>
@@ -110,5 +112,10 @@ export default {
   top: 0px;
   width: 100%;
   z-index: 2;
+}
+
+.card-content {
+  position: relative;
+  z-index: 3;
 }
 </style>
