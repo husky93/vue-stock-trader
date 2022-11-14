@@ -16,6 +16,10 @@
         (stockObject.price - stock.buyPrice) * stock.amount + '$'
       }}</span>
     </div>
+    <div>
+      Value:
+      <span>{{ stockObject.price * stock.amount + '$' }}</span>
+    </div>
     <div class="portfolio-item-ui">
       <Button
         @btn-click="$store.dispatch('sellStock', stock)"
