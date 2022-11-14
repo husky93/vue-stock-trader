@@ -38,6 +38,10 @@ export default {
   --light-color: #9cc5a1;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }

@@ -40,9 +40,17 @@ export default {
 }
 </script>
 <style scoped>
+main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 916px;
+  width: calc(100% - 20px);
 }
 </style>

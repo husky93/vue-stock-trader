@@ -57,12 +57,6 @@ export default createStore({
       },
       {
         id: 8,
-        name: 'S&P500',
-        price: 84,
-        maxAmount: 0,
-      },
-      {
-        id: 9,
         name: 'Blizzard',
         price: 91,
         maxAmount: 0,
