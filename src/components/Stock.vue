@@ -55,7 +55,11 @@ export default {
       }
     },
     handleBuyStock() {
-      this.$store.dispatch('buyStock', { id: this.id, amount: this.count })
+      this.$store.dispatch('buyStock', {
+        id: this.id,
+        amount: this.count,
+        buyPrice: this.price,
+      })
       this.$store.dispatch('changeMaxAmount')
       this.$emit('stock-bought')
       this.count = 0

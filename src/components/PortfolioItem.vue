@@ -1,5 +1,8 @@
 <template>
-  <div>{{ stockObject.name }}</div>
+  <div>
+    <h4>{{ stockObject.name }}</h4>
+    <div>Current Price:</div>
+  </div>
 </template>
 
 <script>

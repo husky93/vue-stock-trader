@@ -81,7 +81,7 @@ export default createStore({
     addStock(state, payload) {
       state.stocksOwned = [
         ...state.stocksOwned,
-        { id: payload.id, amount: payload.amount },
+        { id: payload.id, amount: payload.amount, buyPrice: payload.buyPrice },
       ]
     },
     removeStock(state, payload) {
