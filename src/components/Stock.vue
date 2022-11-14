@@ -2,7 +2,7 @@
   <div class="card">
     <h4>{{ name }}</h4>
     <div>
-      Price: <span>{{ price }}</span>
+      Price: <span>{{ price + '$' }}</span>
     </div>
     <div class="stock-ui">
       <Button @btn-click="decreaseCount" text="-" />
