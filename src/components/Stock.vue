@@ -68,4 +68,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 260px;
+  width: 300px;
+}
+</style>

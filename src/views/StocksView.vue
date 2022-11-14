@@ -1,16 +1,18 @@
 <template>
   <main class="stocks m-auto">
     <h3>Stocks</h3>
-    <Stock
-      @stock-bought="resetCounter"
-      v-for="stock in $store.state.stocksAvailable"
-      :key="stock.id"
-      :name="stock.name"
-      :price="stock.price"
-      :id="stock.id"
-      :maxAmount="stock.maxAmount"
-      :reset="reset"
-    />
+    <div class="container">
+      <Stock
+        @stock-bought="resetCounter"
+        v-for="stock in $store.state.stocksAvailable"
+        :key="stock.id"
+        :name="stock.name"
+        :price="stock.price"
+        :id="stock.id"
+        :maxAmount="stock.maxAmount"
+        :reset="reset"
+      />
+    </div>
   </main>
 </template>
 
@@ -37,4 +39,10 @@ export default {
   },
 }
 </script>
-<style></style>
+<style scoped>
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+</style>
