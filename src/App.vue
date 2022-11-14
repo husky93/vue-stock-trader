@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$store.state.funds < 1000000">
+  <div v-if="$store.state.funds < 1000000" class="main-wrapper">
     <Header />
     <Goal />
     <router-view v-slot="{ Component }">
@@ -9,7 +9,7 @@
     </router-view>
     <Footer />
   </div>
-  <div v-if="$store.state.funds > 1000000">
+  <div v-if="$store.state.funds > 1000000" class="main-wrapper">
     <h1>Congratulations you've won!</h1>
     <p>Refresh the page to start again.</p>
   </div>
@@ -19,7 +19,6 @@
 import Header from './components/Header.vue'
 import Goal from './components/Goal.vue'
 import Footer from './components/Footer.vue'
-
 export default {
   name: 'App',
   components: {
@@ -31,22 +30,39 @@ export default {
 </script>
 
 <style>
+:root {
+  --bg-color: #1f2421;
+  --text-color: #dce1de;
+  --primary-color: #49a078;
+  --secondary-color: #216869;
+  --light-color: #9cc5a1;
+}
+
 body {
   margin: 0;
 }
-main {
-  text-align: left;
+
+.main-wrapper {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+main {
+  flex: 1;
+  text-align: left;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .m-auto {
