@@ -23,10 +23,10 @@
 export default {
   name: 'PortfolioItem',
   props: ['stock'],
-  data() {
-    return {
-      stockObject: this.$store.state.stocksAvailable[this.stock.id],
-    }
+  computed: {
+    stockObject() {
+      return this.$store.state.stocksAvailable[this.stock.id]
+    },
   },
 }
 </script>
