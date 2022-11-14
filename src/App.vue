@@ -1,12 +1,18 @@
 <template>
-  <Header />
-  <Goal />
-  <router-view v-slot="{ Component }">
-    <transition mode="out-in">
-      <component :is="Component" :key="$route.path"></component>
-    </transition>
-  </router-view>
-  <Footer />
+  <div v-if="$store.state.funds < 1000000">
+    <Header />
+    <Goal />
+    <router-view v-slot="{ Component }">
+      <transition mode="out-in">
+        <component :is="Component" :key="$route.path"></component>
+      </transition>
+    </router-view>
+    <Footer />
+  </div>
+  <div v-if="$store.state.funds > 1000000">
+    <h1>Congratulations you've won!</h1>
+    <p>Refresh the page to start again.</p>
+  </div>
 </template>
 
 <script>
