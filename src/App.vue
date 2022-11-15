@@ -31,8 +31,8 @@ export default {
 
 <style>
 :root {
-  --bg-color: #1f2421;
-  --text-color: #dce1de;
+  --bg-color: #060606;
+  --text-color: #eeeffc;
   --primary-color: #49a078;
   --secondary-color: #216869;
   --light-color: #9cc5a1;
