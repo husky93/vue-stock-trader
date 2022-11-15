@@ -31,6 +31,8 @@ export default {
 header .m-auto {
   display: flex;
   justify-content: space-between;
+  position: relative;
+  z-index: 50;
 }
 .container {
   display: flex;

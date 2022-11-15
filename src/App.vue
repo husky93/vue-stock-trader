@@ -36,6 +36,7 @@ export default {
   --primary-color: #49a078;
   --secondary-color: #216869;
   --light-color: #9cc5a1;
+  --page-max-width: 1344px;
 }
 
 * {
@@ -55,6 +56,37 @@ body {
 main {
   flex: 1;
   text-align: left;
+}
+
+main::before {
+  content: '';
+  position: absolute;
+  opacity: 0.06;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(0px);
+  width: calc(100vw - 50px);
+  height: 100vh;
+  filter: blur(80px);
+  --page-edge: calc((100vw - var(--page-max-width)) / 2);
+  background: radial-gradient(
+      400px circle at calc(100% - var(--page-edge) - 10%) 45%,
+      var(--primary-color),
+      70%,
+      transparent
+    ),
+    radial-gradient(
+      400px circle at 50% 55%,
+      var(--secondary-color),
+      60%,
+      transparent
+    ),
+    radial-gradient(
+      350px circle at calc(var(--page-edge) + 15%) 40%,
+      var(--light-color),
+      60%,
+      transparent
+    );
 }
 
 #app {

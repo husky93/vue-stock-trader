@@ -5,16 +5,20 @@
       Price: <span>{{ price + '$' }}</span>
     </div>
     <div class="stock-ui">
-      <Button @btn-click="decreaseCount" text="-" />
-      <input
-        type="number"
-        @input="handleMaxInput"
-        v-model="count"
-        :max="maxAmount"
-      />
-      <Button @btn-click="increaseCount" text="+" />
-      <Button @btn-click="setCount(maxAmount)" text="Max" />
-      <Button @btn-click="handleBuyStock" text="Buy" />
+      <div class="counter-container">
+        <Button @btn-click="decreaseCount" text="-" />
+        <input
+          type="number"
+          @input="handleMaxInput"
+          v-model="count"
+          :max="maxAmount"
+        />
+        <Button @btn-click="increaseCount" text="+" />
+      </div>
+      <div>
+        <Button @btn-click="setCount(maxAmount)" text="Max" />
+        <Button @btn-click="handleBuyStock" text="Buy" />
+      </div>
     </div>
   </Card>
 </template>
@@ -70,4 +74,15 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.counter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 48px;
+  height: 24px;
+}
+</style>
