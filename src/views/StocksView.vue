@@ -19,6 +19,7 @@
 
 <script>
 import Stock from '../components/Stock.vue'
+import { cardsHoverMixin } from '../app/mixins'
 export default {
   name: 'StocksView',
   components: {
@@ -34,19 +35,11 @@ export default {
       this.reset = true
       await setTimeout(() => (this.reset = false), 0)
     },
-    handleMouseMove(e) {
-      for (const card of document.getElementsByClassName('card')) {
-        const rect = card.getBoundingClientRect(),
-          x = e.clientX - rect.left,
-          y = e.clientY - rect.top
-        card.style.setProperty('--mouse-x', `${x}px`)
-        card.style.setProperty('--mouse-y', `${y}px`)
-      }
-    },
   },
   created() {
     this.$store.dispatch('changeMaxAmount')
   },
+  mixins: [cardsHoverMixin],
 }
 </script>
 <style>
