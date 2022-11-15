@@ -43,7 +43,7 @@ export default {
 .card::before {
   background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.07),
     transparent 40%
   );
   z-index: 3;
