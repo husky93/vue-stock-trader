@@ -10,4 +10,11 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.home {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>

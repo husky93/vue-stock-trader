@@ -58,7 +58,7 @@ main {
   text-align: left;
 }
 
-main::before {
+#app::before {
   content: '';
   position: absolute;
   opacity: 0.06;
@@ -67,7 +67,6 @@ main::before {
   transform: translate(-50%, -50%) translateZ(0px);
   width: calc(100vw - 50px);
   height: 100vh;
-  filter: blur(80px);
   --page-edge: calc((100vw - var(--page-max-width)) / 2);
   background: radial-gradient(
       400px circle at calc(100% - var(--page-edge) - 10%) 45%,
