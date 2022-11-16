@@ -1,5 +1,7 @@
 <template>
-  <router-link to="/" class="link"><h1>Stock Trading</h1></router-link>
+  <router-link to="/" class="link"
+    ><img src="../assets/logo.png" alt="Stock Market"
+  /></router-link>
 </template>
 
 <script>
@@ -8,8 +10,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .link {
   text-decoration: none;
+}
+img {
+  width: 120px;
 }
 </style>
