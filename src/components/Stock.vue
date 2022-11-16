@@ -11,6 +11,7 @@
           type="number"
           @input="handleMaxInput"
           v-model="count"
+          min="0"
           :max="maxAmount"
         />
         <Button @btn-click="increaseCount" text="+" />
