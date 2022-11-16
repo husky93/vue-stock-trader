@@ -30,6 +30,7 @@ export default {
 .header-info,
 .day-ui {
   display: flex;
+  align-items: center;
   gap: 24px;
 }
 </style>

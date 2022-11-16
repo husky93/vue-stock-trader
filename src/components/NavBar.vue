@@ -11,8 +11,18 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+nav {
+  display: flex;
+  gap: 24px;
+}
 .link {
+  color: var(--secondary-color);
+  font-weight: 500;
   text-decoration: none;
+  transition: color 150ms;
+}
+.link:hover {
+  color: var(--primary-color);
 }
 </style>
