@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 button {
   display: inline-block;
   background: #000;
@@ -24,5 +24,12 @@ button {
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
+  transition: transform 350ms ease-out;
+  background-color: var(--primary-color);
+  font-weight: 500;
+}
+
+button:hover {
+  transform: translate(-2px, -2px);
 }
 </style>

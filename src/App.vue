@@ -58,7 +58,7 @@ main {
   text-align: left;
 }
 
-#app::before {
+main::before {
   content: '';
   position: absolute;
   opacity: 0.06;
@@ -68,24 +68,6 @@ main {
   width: calc(100vw - 50px);
   height: 100vh;
   --page-edge: calc((100vw - var(--page-max-width)) / 2);
-  background: radial-gradient(
-      400px circle at calc(100% - var(--page-edge) - 10%) 45%,
-      var(--primary-color),
-      70%,
-      transparent
-    ),
-    radial-gradient(
-      400px circle at 50% 55%,
-      var(--secondary-color),
-      60%,
-      transparent
-    ),
-    radial-gradient(
-      350px circle at calc(var(--page-edge) + 15%) 40%,
-      var(--light-color),
-      60%,
-      transparent
-    );
 }
 
 #app {

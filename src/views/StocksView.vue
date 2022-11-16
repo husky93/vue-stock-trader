@@ -61,4 +61,28 @@ export default {
 .stocks-container:hover > .card > .card-border {
   opacity: 1;
 }
+
+main.stocks::before {
+  --radial-bg-primary: var(--primary-color);
+  --radial-bg-secondary: var(--secondary-color);
+  --radial-bg-tetriary: var(--light-color);
+  background: radial-gradient(
+      400px circle at calc(100% - var(--page-edge) - 10%) 45%,
+      var(--radial-bg-primary),
+      70%,
+      transparent
+    ),
+    radial-gradient(
+      400px circle at 50% 55%,
+      var(--radial-bg-secondary),
+      60%,
+      transparent
+    ),
+    radial-gradient(
+      350px circle at calc(var(--page-edge) + 15%) 40%,
+      var(--radial-bg-tetriary),
+      60%,
+      transparent
+    );
+}
 </style>

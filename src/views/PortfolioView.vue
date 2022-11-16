@@ -50,4 +50,28 @@ export default {
 .portfolio-container:hover > .card > .card-border {
   opacity: 1;
 }
+
+main.portfolio::before {
+  --radial-bg-primary: #7776bc;
+  --radial-bg-secondary: #a6a867;
+  --radial-bg-tetriary: #419d78;
+  background: radial-gradient(
+      400px circle at calc(100% - var(--page-edge) - 10%) 45%,
+      var(--radial-bg-primary),
+      70%,
+      transparent
+    ),
+    radial-gradient(
+      400px circle at 50% 55%,
+      var(--radial-bg-secondary),
+      60%,
+      transparent
+    ),
+    radial-gradient(
+      350px circle at calc(var(--page-edge) + 15%) 40%,
+      var(--radial-bg-tetriary),
+      60%,
+      transparent
+    );
+}
 </style>
