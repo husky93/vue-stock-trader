@@ -24,12 +24,12 @@ button {
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
-  transition: transform 350ms ease-out;
+  transition: background-color 250ms ease-in-out;
   background-color: var(--primary-color);
   font-weight: 500;
 }
 
 button:hover {
-  transform: translate(-2px, -2px);
+  background-color: var(--light-color);
 }
 </style>
