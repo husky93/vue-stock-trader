@@ -42,6 +42,7 @@ progress::-webkit-progress-value {
     var(--primary-color),
     var(--secondary-color)
   );
+  transition: width 1s ease;
 }
 .goal {
   display: flex;
