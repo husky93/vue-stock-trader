@@ -1,7 +1,7 @@
 <template>
   <Card>
     <h4>{{ name }}</h4>
-    <div>
+    <div class="price">
       Price: <span>{{ price + '$' }}</span>
     </div>
     <div class="stock-ui">
@@ -16,7 +16,7 @@
         />
         <Button @btn-click="increaseCount" text="+" />
       </div>
-      <div>
+      <div class="button-container">
         <Button @btn-click="setCount(maxAmount)" text="Max" />
         <Button @btn-click="handleBuyStock" text="Buy" />
       </div>
@@ -76,14 +76,61 @@ export default {
 </script>
 
 <style scoped>
-.counter-container {
+h4 {
+  font-size: 1.2rem;
+  margin: 12px 0;
+}
+
+.counter-container,
+.button-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 12px;
+}
+
+.counter-container,
+.price {
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.price span {
+  font-weight: 500;
+  color: var(--light-color);
+  font-size: 1.05rem;
 }
 
 input {
-  width: 48px;
-  height: 24px;
+  width: 76px;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--text-color);
+  border: 2px var(--text-color) solid;
+  transition: background-color 250ms ease-in-out;
+}
+
+input:focus {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 </style>
