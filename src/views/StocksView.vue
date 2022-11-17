@@ -67,7 +67,7 @@ main.stocks::before {
   --radial-bg-secondary: var(--secondary-color);
   --radial-bg-tetriary: var(--light-color);
   background: radial-gradient(
-      400px circle at calc(100% - var(--page-edge) - 10%) 45%,
+      400px circle at calc(100% - var(--page-edge) - 10%) 55%,
       var(--radial-bg-primary),
       70%,
       transparent
@@ -79,7 +79,7 @@ main.stocks::before {
       transparent
     ),
     radial-gradient(
-      350px circle at calc(var(--page-edge) + 15%) 40%,
+      350px circle at calc(var(--page-edge) + 10%) 45%,
       var(--radial-bg-tetriary),
       60%,
       transparent
