@@ -35,6 +35,7 @@ export default {
   --text-color: #eeeffc;
   --primary-color: #49a078;
   --secondary-color: #216869;
+  --danger-color: #c3403e;
   --light-color: #9cc5a1;
   --page-max-width: 1344px;
 }

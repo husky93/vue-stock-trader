@@ -116,7 +116,7 @@ input {
   border-radius: 5px;
   font-size: 1rem;
   color: var(--text-color);
-  border: 2px var(--text-color) solid;
+  border: 1px var(--text-color) solid;
   transition: background-color 250ms ease-in-out;
 }
 
