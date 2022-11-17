@@ -71,6 +71,10 @@ main::before {
   --page-edge: calc((100vw - var(--page-max-width)) / 2);
 }
 
+h3 {
+  font-size: 26px;
+}
+
 #app {
   font-family: 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;

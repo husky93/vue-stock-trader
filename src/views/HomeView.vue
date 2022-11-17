@@ -1,6 +1,21 @@
 <template>
   <main class="home m-auto">
     <h3>Home</h3>
+    <div class="content">
+      <h4>How to play:</h4>
+      <p>
+        Buy stocks on the market (if they are priced well), then end the day
+        (prices change every day). Check your portfolio and decide if it is
+        profitable for you to sell your stocks right now.
+      </p>
+      <p>In summary:</p>
+      <ol>
+        <li>Buy/sell stocks</li>
+        <li>End the day</li>
+        <li>Check the prices</li>
+        <li>Profit & repeat</li>
+      </ol>
+    </div>
   </main>
 </template>
 
@@ -16,6 +31,14 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.content {
+  text-align: left;
+}
+
+h4 {
+  font-size: 1.2rem;
 }
 
 main.home::before {
