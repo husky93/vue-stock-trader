@@ -8,13 +8,15 @@
         (prices change every day). Check your portfolio and decide if it is
         profitable for you to sell your stocks right now.
       </p>
-      <p>In summary:</p>
-      <ol>
-        <li>Buy/sell stocks</li>
-        <li>End the day</li>
-        <li>Check the prices</li>
-        <li>Profit & repeat</li>
-      </ol>
+      <div class="inside">
+        <p>In summary:</p>
+        <ol>
+          <li>Buy/sell stocks</li>
+          <li>End the day</li>
+          <li>Check the prices</li>
+          <li>Profit & repeat</li>
+        </ol>
+      </div>
     </div>
   </main>
 </template>
@@ -34,6 +36,10 @@ export default {
 }
 
 .content {
+  max-width: 500px;
+}
+
+.inside {
   text-align: left;
 }
 
