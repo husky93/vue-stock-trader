@@ -9,7 +9,7 @@
         profitable for you to sell your stocks right now.
       </p>
       <div class="inside">
-        <p>In summary:</p>
+        <h5>In summary:</h5>
         <ol>
           <li>Buy/sell stocks</li>
           <li>End the day</li>
@@ -33,18 +33,27 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-weight: 300;
+  font-size: 15px;
 }
 
 .content {
   max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.inside {
+.inside ol {
   text-align: left;
 }
 
 h4 {
   font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1rem;
 }
 
 main.home::before {
