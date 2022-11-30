@@ -91,6 +91,7 @@ h3 {
   max-width: 1344px;
   margin: 0 auto;
   width: 100%;
+  padding: 16px;
 }
 
 .v-enter-active,

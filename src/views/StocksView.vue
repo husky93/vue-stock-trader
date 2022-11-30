@@ -51,6 +51,7 @@ export default {
 }
 .stocks-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
   max-width: 916px;

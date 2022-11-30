@@ -30,7 +30,10 @@ export default {
 <style scoped>
 header .m-auto {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
   position: relative;
   z-index: 50;
 }
@@ -38,5 +41,12 @@ header .m-auto {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+@media screen and (min-width: 996px) {
+  header .m-auto {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 </style>
